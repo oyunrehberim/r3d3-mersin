@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Takımı Web Sitesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <img src="rd.jpg" alt="Takım Logosu">
+            </div>
+            <h1>R3-D3 Mersin</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Hakkımızda</a></li>
+                <li><a href="#establishment">Takımımız</a></li>
+                <li><a href="#projects">Projelerimiz</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="section">
+            <h1>Genel Bilgi</h1>
+            <p>Yaratıcılık ve teknoloji tutkusuyla birleşen bir ekip! Olan R3-D3 Mersin Olarak Mersinde İlklere İmza Atmayı Severiz. Takımız sürekli işbirliği şeklinde hareket etmektedir.</p>
+        </section>
+        <section id="establishment" class="section">
+            <h2>Takımın Kuruluşu</h2>
+            <p>R3-D3 Mersin, takımımız Sabri Tekli Başkanımızın İstanbul'da bir robotik etkinlik izlemesiyle ve Mersin'e gelince bu isteğini okula bildirmesiyle kurulmuştur. Peki, logomuzda neden 8071 sayısı var? Bunun cevabı, Türkiye'de kurulan 8071. Robotik Takım olmamızdır!</p>
+        </section>
+        <section id="team" class="section">
+            <h2>Takım Üyeleri</h2>
+            <p>Ekibimiz hakkında bilgi burada olacak.</p>
+        </section>
+        <section id="projects" class="section">
+            <h2>Ödüllerimiz</h2>
+            <div class="awards-container">
+                <div class="award">
+                    <div class="award-content">Rookie All Star Award, Mersin Off-Season '19</div>
+                </div>
+                <div class="award">
+                    <div class="award-content">Rookie Game Changer Award, Barium Group '21</div>
+                </div>
+                <div class="award">
+                    <div class="award-content">Industrial Design Award, İzmir Off-Season '21</div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <h2>İletişim</h2>
+            <p>Instagram adresimiz: <a href="https://www.instagram.com/r3d3mersin">r3d3mersin</a></p>
+        </section>
+        <section id="feedback" class="section">
+            <h2>Fikir Ver</h2>
+            <textarea id="ideaInput" placeholder="Fikrini buraya yaz..." rows="4" style="width: 100%;"></textarea>
+            <button id="submitIdea">Gönder</button>
+            <div id="ideasList" style="margin-top: 20px;">
+                <h3>Gönderilen Fikirler</h3>
+                <ul id="ideas"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 R3-D3 Mersin Tüm hakları saklıdır.</p>
+    </footer>
+    <script>
+        
+        document.getElementById("submitIdea").addEventListener("click", function() {
+            var ideaInput = document.getElementById("ideaInput");
+            var ideaText = ideaInput.value.trim();
+            if (ideaText) {
+                var ideasList = document.getElementById("ideas");
+                var li = document.createElement("li");
+                li.textContent = ideaText;
+                ideasList.appendChild(li);
+                ideaInput.value = "";
+            } else {
+                alert("Lütfen bir fikir yazın.");
+            }
+        });
+    </script>
+</body>
+</html>
